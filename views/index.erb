@@ -1,0 +1,24 @@
+        <div class="row">
+<% value = 100 %>
+<% @gdeals.each do |gdeal| %>
+<% gdisplayprice =  gdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
+<% gprice = gdisplayprice.to_i %>
+<% if gprice <= value %>
+<div class="col-md-4" ><div class="well"><p><b><img src="#" width="70"class="lazy" data-original="https://jasonkarpf.files.wordpress.com/2011/02/groupon-logo.png" width="70"> From ₱<%= gprice %></b></p><div align="center"><%= gdeal.at_css(".deal-link") %></div><br><div class="well"><%= gdeal.at_css(".title-container-large").text.strip %></div></div></div>
+<% end %>
+<% end %>
+<% @mdeals.each do |mdeal| %>
+<% mdisplayprice =  mdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
+<% mprice = mdisplayprice.to_i %>
+<% if mprice <= value %>
+<div class="col-md-4"><div class="well"><p><b><img src="#" width="70"class="lazy" data-original="https://pbs.twimg.com/profile_images/3097105503/3bb9867147d30cc827783fd20713d92f_400x400.jpeg"> From ₱<%= mprice %></b></p><div align="center"><%= mdeal.at_css(".deal-link") %></div><br><div class="well"><%= mdeal.at_css(".title-container-large").text.strip %></div></div></div>
+<% end %>
+<% end %>
+<% @tdeals.each do |tdeal| %>
+<% tdisplayprice =  tdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
+<% tprice = tdisplayprice.to_i %>
+<% if tprice <= value %>
+<div class="col-md-4"><div class="well"><p><b><img src="#" width="70"class="lazy" data-original="https://pbs.twimg.com/profile_images/2602904461/j3eser9auu55bp39zrb0_400x400.png"> From ₱<%= tprice %></b></p><div align="center"><%= tdeal.at_css(".deal-link") %></div><br><div class="well"><%= tdeal.at_css(".title-container-large").text.strip[30..-1].strip %></div></div></div>
+<% end %>
+<% end %>
+</div>
