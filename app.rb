@@ -3,6 +3,7 @@ require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
 
+
 get '/' do
 
 #Suredeal Groupon Variables
@@ -21,5 +22,11 @@ mdata = Nokogiri::HTML(open(murl))
 @mdeals = mdata.css('.deal-container-large')
  
   erb :index
+
+end
+
+get '/promote' do
+
+	erb :promote
 
 end
