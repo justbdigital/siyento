@@ -1,0 +1,359 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.metrodeal.com/web_api/?by_category=false&category_id=0&page=1&request=loadDeals
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - application/json
+      User-Agent:
+      - Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla
+        Firebird/0.6
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Host:
+      - www.metrodeal.com
+      Referer:
+      - !ruby/object:URI::HTTP
+        scheme: http
+        user: 
+        password: 
+        host: www.metrodeal.com
+        port: 80
+        path: "/category/All"
+        query: 
+        opaque: 
+        fragment: 
+        parser: !ruby/object:URI::RFC3986_Parser
+          regexp:
+            :SCHEME: !ruby/regexp /\A[A-Za-z][A-Za-z0-9+\-.]*\z/
+            :USERINFO: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=A-Z_a-z~])*\z/
+            :HOST: !ruby/regexp /\A(?:(?<IP-literal>\[(?:(?<IPv6address>(?:\h{1,4}:){6}(?<ls32>\h{1,4}:\h{1,4}|(?<IPv4address>(?<dec-octet>[1-9]\d|1\d{2}|2[0-4]\d|25[0-5]|\d)\.\g<dec-octet>\.\g<dec-octet>\.\g<dec-octet>))|::(?:\h{1,4}:){5}\g<ls32>|\h{,4}::(?:\h{1,4}:){4}\g<ls32>|(?:(?:\h{1,4}:)?\h{1,4})?::(?:\h{1,4}:){3}\g<ls32>|(?:(?:\h{1,4}:){,2}\h{1,4})?::(?:\h{1,4}:){2}\g<ls32>|(?:(?:\h{1,4}:){,3}\h{1,4})?::\h{1,4}:\g<ls32>|(?:(?:\h{1,4}:){,4}\h{1,4})?::\g<ls32>|(?:(?:\h{1,4}:){,5}\h{1,4})?::\h{1,4}|(?:(?:\h{1,4}:){,6}\h{1,4})?::)|(?<IPvFuture>v\h+\.[!$&-.0-;=A-Z_a-z~]+))\])|\g<IPv4address>|(?<reg-name>(?:%\h\h|[!$&-.0-9;=A-Z_a-z~])*))\z/
+            :ABS_PATH: !ruby/regexp /\A\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*(?:\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*)*\z/
+            :REL_PATH: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~])+(?:\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*)*\z/
+            :QUERY: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~\/?])*\z/
+            :FRAGMENT: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~\/?])*\z/
+            :OPAQUE: !ruby/regexp /\A(?:[^\/].*)?\z/
+            :PORT: !ruby/regexp /\A[\x09\x0a\x0c\x0d ]*\d*[\x09\x0a\x0c\x0d ]*\z/
+      X-Requested-With:
+      - XMLHttpRequest
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Sep 2015 21:13:14 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.3.15
+      - PleskLin
+      X-Frame-Options:
+      - SAMEORIGIN
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - PHPSESSID=srsl19l8urjvsql5u1k5bnjdf1; path=/
+      Ms-Author-Via:
+      - DAV
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1559'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        Dk20Kniddfq30cvw02Krfet7X/4FHIy19/sVAAA=
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 21:13:15 GMT
+- request:
+    method: get
+    uri: http://www.metrodeal.com/web_api/?by_category=false&category_id=0&page=1&request=loadDeals
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - application/json
+      User-Agent:
+      - Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla
+        Firebird/0.6
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Cookie:
+      - PHPSESSID=srsl19l8urjvsql5u1k5bnjdf1
+      Host:
+      - www.metrodeal.com
+      Referer:
+      - !ruby/object:URI::HTTP
+        scheme: http
+        user: 
+        password: 
+        host: www.metrodeal.com
+        port: 80
+        path: "/category/All"
+        query: 
+        opaque: 
+        fragment: 
+        parser: &1 !ruby/object:URI::RFC3986_Parser
+          regexp:
+            :SCHEME: !ruby/regexp /\A[A-Za-z][A-Za-z0-9+\-.]*\z/
+            :USERINFO: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=A-Z_a-z~])*\z/
+            :HOST: !ruby/regexp /\A(?:(?<IP-literal>\[(?:(?<IPv6address>(?:\h{1,4}:){6}(?<ls32>\h{1,4}:\h{1,4}|(?<IPv4address>(?<dec-octet>[1-9]\d|1\d{2}|2[0-4]\d|25[0-5]|\d)\.\g<dec-octet>\.\g<dec-octet>\.\g<dec-octet>))|::(?:\h{1,4}:){5}\g<ls32>|\h{,4}::(?:\h{1,4}:){4}\g<ls32>|(?:(?:\h{1,4}:)?\h{1,4})?::(?:\h{1,4}:){3}\g<ls32>|(?:(?:\h{1,4}:){,2}\h{1,4})?::(?:\h{1,4}:){2}\g<ls32>|(?:(?:\h{1,4}:){,3}\h{1,4})?::\h{1,4}:\g<ls32>|(?:(?:\h{1,4}:){,4}\h{1,4})?::\g<ls32>|(?:(?:\h{1,4}:){,5}\h{1,4})?::\h{1,4}|(?:(?:\h{1,4}:){,6}\h{1,4})?::)|(?<IPvFuture>v\h+\.[!$&-.0-;=A-Z_a-z~]+))\])|\g<IPv4address>|(?<reg-name>(?:%\h\h|[!$&-.0-9;=A-Z_a-z~])*))\z/
+            :ABS_PATH: !ruby/regexp /\A\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*(?:\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*)*\z/
+            :REL_PATH: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~])+(?:\/(?:%\h\h|[!$&-.0-;=@-Z_a-z~])*)*\z/
+            :QUERY: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~\/?])*\z/
+            :FRAGMENT: !ruby/regexp /\A(?:%\h\h|[!$&-.0-;=@-Z_a-z~\/?])*\z/
+            :OPAQUE: !ruby/regexp /\A(?:[^\/].*)?\z/
+            :PORT: !ruby/regexp /\A[\x09\x0a\x0c\x0d ]*\d*[\x09\x0a\x0c\x0d ]*\z/
+      X-Requested-With:
+      - XMLHttpRequest
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Sep 2015 21:16:49 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.3.15
+      - PleskLin
+      X-Frame-Options:
+      - SAMEORIGIN
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Ms-Author-Via:
+      - DAV
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1559'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        Dk20Kniddfq30cvw02Krfet7X/4FHIy19/sVAAA=
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 21:16:49 GMT
+- request:
+    method: get
+    uri: http://www.metrodeal.com/web_api/?by_category=false&category_id=0&page=1&request=loadDeals
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip,deflate,identity
+      Accept:
+      - application/json
+      User-Agent:
+      - Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4b) Gecko/20030516 Mozilla
+        Firebird/0.6
+      Accept-Charset:
+      - ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language:
+      - en-us,en;q=0.5
+      Cookie:
+      - PHPSESSID=srsl19l8urjvsql5u1k5bnjdf1
+      Host:
+      - www.metrodeal.com
+      Referer:
+      - !ruby/object:URI::HTTP
+        scheme: http
+        user: 
+        password: 
+        host: www.metrodeal.com
+        port: 80
+        path: "/category/All"
+        query: 
+        opaque: 
+        fragment: 
+        parser: *1
+      X-Requested-With:
+      - XMLHttpRequest
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 300
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Sep 2015 21:16:51 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.3.15
+      - PleskLin
+      X-Frame-Options:
+      - SAMEORIGIN
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Ms-Author-Via:
+      - DAV
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1559'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        Dk20Kniddfq30cvw02Krfet7X/4FHIy19/sVAAA=
+    http_version: 
+  recorded_at: Tue, 29 Sep 2015 21:16:51 GMT
+recorded_with: VCR 2.9.3
