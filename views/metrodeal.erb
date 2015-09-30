@@ -1,0 +1,14 @@
+<% @offers.each do |offer| %>
+<div class='row'>
+  <div class="col-md-12">
+    <div> <%= offer[:title] %> </div>
+    <div> <img src='<%= offer[:image_url] %>'> </div>
+    <div> <%= offer[:deal_price] %> </div>
+    <div> <%= offer[:original_price] %> </div>
+    <div> <%= offer[:purchases] %> </div>
+    <div> <%= offer[:deal_url] %> </div>
+    <div> <%= offer[:discount] %> </div>
+    <div> <%= offer[:title] %> </div>
+    </div
+  </div>
+<% end %>
