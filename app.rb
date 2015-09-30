@@ -3,30 +3,26 @@ require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
 
+set :database_file, File.expand_path("../config/database.yml", __FILE__)
+set :root, File.dirname(__FILE__)
 
 get '/' do
+  parser = SuredealParser.new
+  parser.fetch
+  @gdeals = parser.gdeals
+  @tdeals = parser.tdeals
+  @mdeals = parser.mdeals
 
-#Suredeal Groupon Variables
-gurl = "http://suredeal.com.ph/manila/all-deals/beeconomic/?order=cheapest-deals"
-gdata = Nokogiri::HTML(open(gurl))
-@gdeals = gdata.css('.deal-container-large')
-
-#Suredeal Tcat Variables
-turl = "http://suredeal.com.ph/manila/shopping-and-product-deals/tcat/?order=cheapest-deals"
-tdata = Nokogiri::HTML(open(turl))
-@tdeals = tdata.css('.deal-container-large')
-
-#Suredeal Metro Deals Variables
-murl = "http://suredeal.com.ph/manila/all-deals/metrodeal/?order=cheapest-deals"
-mdata = Nokogiri::HTML(open(murl))
-@mdeals = mdata.css('.deal-container-large')
- 
   erb :index
-
 end
 
 get '/promote' do
-
 	erb :promote
+end
 
+get '/metrodeal' do
+  parser = MetrodealParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :metrodeal
 end
