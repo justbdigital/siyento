@@ -26,3 +26,10 @@ get '/metrodeal' do
   @offers = parser.fetch
   erb :metrodeal
 end
+
+get '/cashcashpinoy' do
+  parser = Cashcashpinoy.new
+  @offers = []
+  @offers = parser.fetch
+  erb :cashcashpinoy
+end

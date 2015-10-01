@@ -1,22 +1,11 @@
-class MetrodealParser
+class MetrodealParser < ParserBase
   ITEMS_URL = 'http://www.metrodeal.com/web_api/?request=loadDeals&page=%s&category_id=0&by_category=false'
-
-
-  def initialize
-    @conn = Mechanize.new do |agent|
-      agent.user_agent_alias =  'Windows Mozilla'
-    end
-  end
-
-  def fetch
-    transform retrieve
-  end
 
   def retrieve
     data = []
     5.times do |time|
       url = ITEMS_URL % (time + 1)
-      response = @conn.get url, [], 'http://www.metrodeal.com/category/All',  { 'Accept' => 'application/json', 'X-Requested-With' => 'XMLHttpRequest' }
+      response = conn.get url, [], 'http://www.metrodeal.com/category/All',  { 'Accept' => 'application/json', 'X-Requested-With' => 'XMLHttpRequest' }
       data << JSON.parse(response.body, symbolize_names: true)
     end
     data
@@ -38,9 +27,5 @@ class MetrodealParser
         }
       end
     end
-  end
-
-  def parse_number input
-    input.scan(/\d+/).first.to_i
   end
 end
