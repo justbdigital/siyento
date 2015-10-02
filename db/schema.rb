@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930053210) do
+ActiveRecord::Schema.define(version: 20151001202100) do
 
   create_table "offers", force: :cascade do |t|
-    t.string  "datasource"
-    t.string  "image_url"
-    t.string  "deal_url"
-    t.decimal "deal_price"
-    t.decimal "original_price"
-    t.string  "currency"
-    t.integer "discount"
-    t.integer "purchases"
+    t.string   "datasource"
+    t.string   "image_url"
+    t.string   "deal_url"
+    t.decimal  "deal_price"
+    t.decimal  "original_price"
+    t.string   "currency"
+    t.integer  "discount"
+    t.integer  "purchases"
+    t.text     "title"
+    t.text     "description"
+    t.datetime "deal_end"
   end
 
 end
