@@ -16,6 +16,7 @@ class ParserBase
 
   def parse_number input
     return 0 unless input
+    input = input.gsub ",", ""
     input.scan(/\d+/).first.to_i
   end
 end

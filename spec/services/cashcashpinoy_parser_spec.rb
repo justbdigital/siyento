@@ -1,7 +1,7 @@
 describe Cashcashpinoy, vcr: true do
   let(:parser) { Cashcashpinoy.new }
 
-  context '#fetch', :focus do
+  context '#fetch' do
     let(:result) { parser.fetch }
     it { binding.pry; expect(result).to be_truthy }
   end
