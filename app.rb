@@ -40,3 +40,10 @@ get '/ensogo' do
   @offers = parser.fetch
   erb :ensogo
 end
+
+get '/tcat' do
+  parser = TcatParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :tcat
+end

@@ -1,5 +1,5 @@
 describe EnsogoParser, vcr: true do
-  describe '#retrieve', :focus do
+  describe '#retrieve' do
     let(:parser) { EnsogoParser.new }
     let(:result) { parser.fetch }
     it do
