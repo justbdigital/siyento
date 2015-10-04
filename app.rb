@@ -33,3 +33,10 @@ get '/cashcashpinoy' do
   @offers = parser.fetch
   erb :cashcashpinoy
 end
+
+get '/ensogo' do
+  parser = EnsogoParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :ensogo
+end
