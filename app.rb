@@ -47,3 +47,10 @@ get '/tcat' do
   @offers = parser.fetch
   erb :tcat
 end
+
+get '/trendsndeals' do
+  parser = TrendsndealsParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :tcat
+end
