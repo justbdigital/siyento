@@ -54,3 +54,10 @@ get '/trendsndeals' do
   @offers = parser.fetch
   erb :tcat
 end
+
+get '/dealgrocer' do
+  parser = DealgrocerParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :dealgrocer
+end
