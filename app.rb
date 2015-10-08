@@ -61,3 +61,10 @@ get '/dealgrocer' do
   @offers = parser.fetch
   erb :dealgrocer
 end
+
+get '/pinoygreatdeals' do
+  parser = PinoygreatdealsParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :pinoygreatdeals
+end
