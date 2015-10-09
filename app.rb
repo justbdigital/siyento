@@ -68,3 +68,10 @@ get '/pinoygreatdeals' do
   @offers = parser.fetch
   erb :pinoygreatdeals
 end
+
+get '/dealspot' do
+  parser = DealspotParser.new
+  @offers = []
+  @offers = parser.fetch
+  erb :dealspot
+end
