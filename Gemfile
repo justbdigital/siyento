@@ -6,6 +6,7 @@ gem 'sinatra-activerecord'
 gem 'sqlite3'
 gem 'rake'
 gem 'mechanize'
+gem 'unicorn'
 
 group :development, :test do
   gem 'guard-rspec'
