@@ -13,4 +13,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'pry'
+  gem 'capistrano'
+  gem "capistrano-bundler"
+  gem 'capistrano-rvm'
 end
