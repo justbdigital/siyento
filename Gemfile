@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'rake'
 gem 'mechanize'
 gem 'unicorn'
+gem 'pg'
 
 group :development, :test do
   gem 'guard-rspec'
