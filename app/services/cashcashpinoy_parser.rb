@@ -1,4 +1,4 @@
-class Cashcashpinoy < ParserBase
+class CashcashpinoyParser < ParserBase
   ITEMS_URL = 'http://www.cashcashpinoy.com/rest/category/1/deals'
   BASE_IMAGE_URL = 'http://cdn3.cashcashpinoy.com/upload/deals/'
 
