@@ -8,6 +8,7 @@ gem 'rake'
 gem 'mechanize'
 gem 'unicorn'
 gem 'pg'
+gem 'whenever'
 
 group :development, :test do
   gem 'guard-rspec'

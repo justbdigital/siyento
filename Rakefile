@@ -6,3 +6,10 @@ namespace :db do
     require "./app"
   end
 end
+
+namespace :parser do
+  desc "Parse all content and store into database"
+  task :parse_all do
+    ParsersSchedule.new.fetch_all
+  end
+end

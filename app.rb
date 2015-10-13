@@ -21,57 +21,41 @@ get '/promote' do
 end
 
 get '/metrodeal' do
-  parser = MetrodealParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "metrodeal"
   erb :metrodeal
 end
 
 get '/cashcashpinoy' do
-  parser = Cashcashpinoy.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "cashcashpinoy"
   erb :cashcashpinoy
 end
 
 get '/ensogo' do
-  parser = EnsogoParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "ensogo"
   erb :ensogo
 end
 
 get '/tcat' do
-  parser = TcatParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "tcat"
   erb :tcat
 end
 
 get '/trendsndeals' do
-  parser = TrendsndealsParser.new
-  @offers = []
-  @offers = parser.fetch
-  erb :tcat
+  @offers = Offer.where datasource: "trendsndeals"
+  erb :trendsndeals
 end
 
 get '/dealgrocer' do
-  parser = DealgrocerParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "dealgrocer"
   erb :dealgrocer
 end
 
 get '/pinoygreatdeals' do
-  parser = PinoygreatdealsParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "pinoygreatdeals"
   erb :pinoygreatdeals
 end
 
 get '/dealspot' do
-  parser = DealspotParser.new
-  @offers = []
-  @offers = parser.fetch
+  @offers = Offer.where datasource: "dealspot"
   erb :dealspot
 end

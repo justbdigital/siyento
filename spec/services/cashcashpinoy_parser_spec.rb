@@ -1,5 +1,5 @@
-describe Cashcashpinoy, vcr: true do
-  let(:parser) { Cashcashpinoy.new }
+describe CashcashpinoyParser, vcr: true do
+  let(:parser) { CashcashpinoyParser.new }
 
   context '#fetch' do
     let(:result) { parser.fetch }
