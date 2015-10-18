@@ -463,3 +463,7 @@ csmall2 {
 	padding-right: 15px;
 	font-size: 18px;
 }
+
+.past-price{
+	text-decoration: line-through;
+}

@@ -5,17 +5,26 @@ PORTFOLIO SECTION
 <div id="portfoliowrap">
 		 <div class="portfolio-centered">
 				 <div class="recentitems portfolio">
-					 <% @offers.each do |offer| %>
+					 <div class="container">
+					 <% @offers.each_slice(4) do |offers| %>
+					 <div class="row">
+						 <% offers.each do |offer| %>
+						 <div class="col-md-3">
 		 <div class="portfolio-item">
 			 <div class="he-wrap tpl6">
-			 <a href="#" data-reveal-id="modal-<%=offer.id %>"><img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;"> </a>
+			 <a href="#modal-<%=offer.id %>" rel="modal:open" ><img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;"> </a>
 			 </div><!-- he wrap -->
 		 </div><!-- end col-12 -->
-		 <div id="modal-<%=offer.id %>" class="reveal-modal large">
-			 EHLO
-			 <a class="close-reveal-modal">&#215;</a>
+		 <div id="modal-<%=offer.id %>" class="modal">
+			 <%= partial :offer, locals: { offer: offer }%>
 		 </div>
+	 </div>
 		 <% end %>
+	 </div>
+
+		 <% end %>
+	 </div>
+
 				 </div><!-- portfolio -->
 		 </div><!-- portfolio container -->
 </div><!--/Portfoliowrap -->

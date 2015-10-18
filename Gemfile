@@ -9,6 +9,7 @@ gem 'mechanize'
 gem 'unicorn'
 gem 'pg'
 gem 'whenever'
+gem 'sinatra-partial'
 
 group :development, :test do
   gem 'guard-rspec'
