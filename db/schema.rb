@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001202100) do
+ActiveRecord::Schema.define(version: 20151018083447) do
 
   create_table "offers", force: :cascade do |t|
     t.string   "datasource"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20151001202100) do
     t.text     "title"
     t.text     "description"
     t.datetime "deal_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

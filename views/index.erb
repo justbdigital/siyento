@@ -1,0 +1,24 @@
+
+<!-- *****************************************************************************************************************
+PORTFOLIO SECTION
+***************************************************************************************************************** -->
+<div id="portfoliowrap">
+		 <div class="portfolio-centered">
+				 <div class="recentitems portfolio">
+					 <% @offers.each do |offer| %>
+		 <div class="portfolio-item">
+			 <div class="he-wrap tpl6">
+			 <img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;">
+				 <div class="he-view">
+					 <div class="bg a0" data-animate="fadeIn">
+														 <h3 class="a1" data-animate="fadeInDown"><%= offer.title %><br><br>₱<%= offer.deal_price.to_i %></h3>
+														 <a data-rel="prettyPhoto" href="<%= offer.image_url %>" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+														 <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-thumbs-up"></i></a>
+											 </div><!-- he bg -->
+				 </div><!-- he view -->
+			 </div><!-- he wrap -->
+		 </div><!-- end col-12 -->
+		 <% end %>
+				 </div><!-- portfolio -->
+		 </div><!-- portfolio container -->
+</div><!--/Portfoliowrap -->
