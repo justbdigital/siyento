@@ -2,7 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
-
 set :database_file, File.expand_path("../config/database.yml", __FILE__)
 set :root, File.dirname(__FILE__)
 set :partial_template_engine, :erb
