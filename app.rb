@@ -7,12 +7,7 @@ set :database_file, File.expand_path("../config/database.yml", __FILE__)
 set :root, File.dirname(__FILE__)
 
 get '/' do
-  parser = SuredealParser.new
-  parser.fetch
-  @gdeals = parser.gdeals
-  @tdeals = parser.tdeals
-  @mdeals = parser.mdeals
-
+  @offers = Offer.where("deal_price < ? and created_at > ?", 100, (Date.today - 3).to_time)
   erb :index
 end
 

@@ -1,82 +1,24 @@
-<div class="row">
-	   <div class="col-md-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading"><a href="promote" class="pull-right">Promote your business</a> <h4><img src="img/siyentosquare.png" width="50"></h4></div>
-   			<div class="panel-body">
-              <p><div align="center"><form class="form" action="/signup" method="post">
-              <h4>Sign-up</h4>
-              <div class="input-group text-center">
-              <input class="form-control" id="focusedInput" type="text" name="email" value="Enter your Email...">
-                <span class="input-group-btn"><button type="submit" class="btn btn-primary">Submit</button></span>
-              </div>
-            </form></div></p>
-              <div class="clearfix"></div>
-              <hr>
-              Welcome to Siyento! Amazing deals in the Philippines for under ₱100! <br><br>Join our newsletter and please like us on Facebook!
-              <br><hr>
-              <div class="fb-like" data-href="https://www.facebook.com/siyentoapp" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-            </div></div></div>
-        
 
-<% value = 100 %>
-<% @gdeals.each do |gdeal| %>
-<% gdisplayprice =  gdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
-<% gprice = gdisplayprice.to_i %>
-<% if gprice <= value %>
-<div class="col-md-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading"><a href="<%= gdeal.at_css(".deal-link")[:href] %>" class="pull-right">From ₱<%= gprice %></a> <h4><img src="#" width="70"class="lazy" data-original="https://jasonkarpf.files.wordpress.com/2011/02/groupon-logo.png" width="70"></h4></div>
-   			<div class="panel-body">
-              <p><div align="center"><%= gdeal.at_css(".deal-link") %></div></p>
-              <div class="clearfix"></div>
-              <hr>
-              <%= gdeal.at_css(".title-container-large").text.strip %><br><hr>
-              <span class="label label-default"><%= gdeal.at_css(".category-container-large").text.strip[0..-14] %></span> <span class="label label-success">From ₱<%= gprice %></span> <span class="label label-info">Groupon</span>
-            </div></div></div>
-
-
-<% end %>
-<% end %>
-
-
-
-<% @mdeals.each do |mdeal| %>
-<% mdisplayprice =  mdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
-<% mprice = mdisplayprice.to_i %>
-<% if mprice <= value %>
-
-<div class="col-md-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading"><a href="#" class="pull-right">From ₱<%= mprice %></a> <h4><img src="#" width="40"class="lazy" data-original="https://pbs.twimg.com/profile_images/3097105503/3bb9867147d30cc827783fd20713d92f_400x400.jpeg" width="70"></h4></div>
-   			<div class="panel-body">
-              <p><div align="center"><%= mdeal.at_css(".deal-link") %></div></p>
-              <div class="clearfix"></div>
-              <hr>
-              <%= mdeal.at_css(".title-container-large").text.strip %><br><hr>
-              <span class="label label-default"><%= mdeal.at_css(".category-container-large").text.strip[0..-12] %></span> <span class="label label-success">From ₱<%= mprice %></span> <span class="label label-info">Metro Deal</span>
-            </div></div></div>
-
-
-<% end %>
-<% end %>
-
-<% @tdeals.each do |tdeal| %>
-<% tdisplayprice =  tdeal.at_css(".badge.badge-warning").text.strip.delete! ',P' %>
-<% tprice = tdisplayprice.to_i %>
-<% if tprice <= value %>
-
-<div class="col-md-4 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-heading"><a href="#" class="pull-right">From ₱<%= tprice %></a> <h4><img src="#" width="40"class="lazy" data-original="https://pbs.twimg.com/profile_images/2602904461/j3eser9auu55bp39zrb0_400x400.png" width="70"></h4></div>
-   			<div class="panel-body">
-              <p><div align="center"><%= tdeal.at_css(".deal-link") %></div></p>
-              <div class="clearfix"></div>
-              <hr>
-              <%= tdeal.at_css(".title-container-large").text.strip %><br><hr>
-              <span class="label label-default">Shopping</span> <span class="label label-success">From ₱<%= tprice %></span> <span class="label label-info">Tcat Philippines</span>
-            </div></div></div>
-
-
-<% end %>
-<% end %>
-</div>
+<!-- *****************************************************************************************************************
+PORTFOLIO SECTION
+***************************************************************************************************************** -->
+<div id="portfoliowrap">
+		 <div class="portfolio-centered">
+				 <div class="recentitems portfolio">
+					 <% @offers.each do |offer| %>
+		 <div class="portfolio-item">
+			 <div class="he-wrap tpl6">
+			 <img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;">
+				 <div class="he-view">
+					 <div class="bg a0" data-animate="fadeIn">
+														 <h3 class="a1" data-animate="fadeInDown"><%= offer.title %><br><br>₱<%= offer.deal_price.to_i %></h3>
+														 <a data-rel="prettyPhoto" href="<%= offer.image_url %>" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+														 <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-thumbs-up"></i></a>
+											 </div><!-- he bg -->
+				 </div><!-- he view -->
+			 </div><!-- he wrap -->
+		 </div><!-- end col-12 -->
+		 <% end %>
+				 </div><!-- portfolio -->
+		 </div><!-- portfolio container -->
+</div><!--/Portfoliowrap -->
