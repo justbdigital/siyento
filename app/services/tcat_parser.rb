@@ -1,16 +1,22 @@
 class TcatParser < ParserBase
-  ITEMS_URL = "http://www.tcat.com.ph/"
-  
+  ITEMS_URL = ["http://www.tcat.com.ph/","http://www.tcat.com.ph/99deals/"]
+
   def retrieve
-    response = conn.get ITEMS_URL
-    response.body
+    result = []
+    ITEMS_URL.each do |url|
+      response = conn.get url
+      result << response.body
+    end
+    result
   end
 
-  def transform data
-    doc = Nokogiri::HTML data
-    items = doc.css 'li.small'
-    items.map do |item|
-      parse item
+  def transform responses
+    responses.flat_map do |data|
+      doc = Nokogiri::HTML data
+      items = doc.css 'li.small'
+      items.map do |item|
+        parse item
+      end
     end
   end
 

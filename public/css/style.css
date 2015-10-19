@@ -467,3 +467,32 @@ csmall2 {
 .past-price{
 	text-decoration: line-through;
 }
+
+.rollover{
+	position: relative;
+}
+
+.rollover .fade-item{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0, .4);
+	color: #fff;
+	visibility: hidden;
+	opacity: 1;
+
+}
+
+.rollover:hover .fade-item{
+	visibility: visible;
+}
+
+.fade-item .info{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	padding: 5px;
+	bottom: 10px;
+}

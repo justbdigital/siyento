@@ -3,28 +3,34 @@
 PORTFOLIO SECTION
 ***************************************************************************************************************** -->
 <div id="portfoliowrap">
-		 <div class="portfolio-centered">
-				 <div class="recentitems portfolio">
-					 <div class="container">
-					 <% @offers.each_slice(4) do |offers| %>
-					 <div class="row">
-						 <% offers.each do |offer| %>
-						 <div class="col-md-3">
-		 <div class="portfolio-item">
-			 <div class="he-wrap tpl6">
-			 <a href="#modal-<%=offer.id %>" rel="modal:open" ><img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;"> </a>
-			 </div><!-- he wrap -->
-		 </div><!-- end col-12 -->
-		 <div id="modal-<%=offer.id %>" class="modal">
-			 <%= partial :offer, locals: { offer: offer }%>
-		 </div>
-	 </div>
-		 <% end %>
-	 </div>
-
-		 <% end %>
-	 </div>
-
-				 </div><!-- portfolio -->
-		 </div><!-- portfolio container -->
+	<div class="portfolio-centered">
+		<div class="recentitems portfolio">
+			<div class="container">
+				<% @offers.each_slice(4) do |offers| %>
+				<div class="row">
+					<% offers.each do |offer| %>
+					<div class="col-md-3">
+						<a href="#modal-<%=offer.id %>" rel="modal:open" >
+							<div class="portfolio-item rollover">
+								<div class="he-wrap tpl6">
+									<img src="<%= offer.image_url %>" alt="" style="width: 271px; height: 203px;">
+								</div><!-- he wrap -->
+								<div class="fade-item">
+									<div class="info">
+										<div><%= offer.title %></div>
+										<div>₱<%= offer.deal_price.to_i %></div>
+									</div>
+								</div>
+							</div><!-- end col-12 -->
+						</a>
+						<div id="modal-<%=offer.id %>" class="modal">
+							<%= partial :offer, locals: { offer: offer }%>
+						</div>
+					</div>
+					<% end %>
+				</div>
+				<% end %>
+			</div>
+		</div><!-- portfolio -->
+	</div><!-- portfolio container -->
 </div><!--/Portfoliowrap -->

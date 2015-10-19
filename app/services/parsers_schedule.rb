@@ -11,7 +11,7 @@ class ParsersSchedule
 
   def save_to_db result
       result.each do |item|
-        offer = Offer.where("created_at > ? and title = ?", (Date.today - 3).to_time, item[:title]).first
+        offer = Offer.last_days.where("title = ?", item[:title]).first
         if offer == nil
           item[:created_at] = DateTime.now
           item[:updated_at] = DateTime.now
