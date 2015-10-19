@@ -6,6 +6,7 @@
 # Example:
 #
 set :output, "/home/apps/siyento/shared/log/cron_log.log"
+set :environment_variable, "RACK_ENV"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -18,6 +19,7 @@ set :output, "/home/apps/siyento/shared/log/cron_log.log"
 # end
 
 # Learn more: http://github.com/javan/whenever
+#
 every 1.hour do
   rake "parser:parse_all"
 end

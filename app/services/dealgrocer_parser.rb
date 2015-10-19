@@ -3,7 +3,7 @@ class DealgrocerParser < ParserBase
 
   def retrieve
     data = []
-    2.times do |time|
+    5.times do |time|
       response = conn.get ITEMS_URL % (time + 1)
       data << response.body
     end
