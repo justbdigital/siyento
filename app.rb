@@ -2,12 +2,13 @@ require 'rubygems'
 require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 set :database_file, File.expand_path("../config/database.yml", __FILE__)
 set :root, File.dirname(__FILE__)
 set :partial_template_engine, :erb
 
 get '/' do
-  @offers = Offer.where("deal_price < ? and created_at > ?", 100, (Date.today - 3).to_time)
+  @offers = Offer.last_days.where("deal_price < ?", 100)
   erb :index
 end
 
