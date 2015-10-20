@@ -8,12 +8,17 @@ set :root, File.dirname(__FILE__)
 set :partial_template_engine, :erb
 
 get '/' do
-  @offers = Offer.last_days.where("deal_price < ?", 100)
+  @offers = Offer.last_days.where("deal_price <= ?", 100)
   erb :index
 end
 
+post '/filter' do
+  @offers = Offer.last_days.where("deal_price <= ?", params[:deal_price])
+  partial :offers
+end
+
 get '/promote' do
-	erb :promote
+  erb :promote
 end
 
 get '/metrodeal' do

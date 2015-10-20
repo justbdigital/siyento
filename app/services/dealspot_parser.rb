@@ -7,7 +7,7 @@ class DealspotParser < ParserBase
     data = []
     response = conn.get ITEMS_URL
     data << response.body
-    1.times do |time|
+    5.times do |time|
       response = conn.get ITEMS_URL_OTHER % (time + 1)
       data << response.body
     end
