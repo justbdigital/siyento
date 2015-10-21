@@ -11,13 +11,12 @@ class DealgrocerParser < ParserBase
   end
 
   def transform data
-    data.flat_map do |item|
-      parse item
-    end
+    data.map { |body| JSON.parse body, symbolize_names: true }
+        .select { |hash| !hash.empty? }
+        .flat_map { |item| parse item }
   end
 
   def parse data
-    data = JSON.parse data, symbolize_names: true
     items = data[:data][:collection][:"deal-tiles"].flatten
     items.map do |item|
       {

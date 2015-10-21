@@ -23,11 +23,10 @@ class TcatParser < ParserBase
   def parse item
     image_url = item.css("a img")[0].attributes["src"].value
     deal_url = deal_url item
-    deal_price = parse_number item.css(".info div div:nth-child(2) div:nth-child(3) span")[0].text
-    original_price = parse_number item.css(".info div div:nth-child(2) div:nth-child(3)")[0].children[1].text
+    deal_price = parse_number item.css(".info div div:nth-child(2) div:nth-child(3) span.t_price")[0].text
+    original_price = parse_orginal_price item, deal_price
     title = item.css("a")[0].attributes["title"].value
     discount = parse_number item.css(".info div div:nth-child(2) div:nth-child(1)")[0].children[0].text
-
     {
       datasource: 'tcat',
       deal_url:  deal_url,
@@ -45,5 +44,11 @@ class TcatParser < ParserBase
   def deal_url item
     deal_url = item.css("a")[0].attributes["href"].value
     "http://www.tcat.com.ph#{deal_url}"
+  end
+
+  def parse_orginal_price item, deal_price
+    result = item.css(".info div div:nth-child(2) div:nth-child(3) span.m_price")
+    return deal_price if result.empty?
+    parse_number result[0].text
   end
 end
