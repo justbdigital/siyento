@@ -197,7 +197,7 @@ clicksor_enable_pop = true;
            <h4>Our Newsletter</h4>
            <div class="hline-w"></div>
            <p>
-<form class="form" action="/signup" method="post">
+<form class="form email-form" action="/add_email" method="post">
               <div class="input-group text-center">
               <input class="form-control" id="focusedInput" type="text" name="email" value="Enter your Email...">
                 <span class="input-group-btn"><button type="submit" class="btn btn-primary">Submit</button></span>
@@ -224,6 +224,11 @@ clicksor_enable_pop = true;
     <div id="amount">LESS THAN ₱<span>100</span></div>
     <div id="range-slider"></div>
     <div class="btn btn-block btn-success" id="apply-filter">APPLY</div>
+  </div>
+
+  <div class="modal subscription-info">
+    <h3></h3>
+    <div class="btn btn-block btn-success" id="close-subscription-info">Got it</div>
   </div>
   </body>
 </html>
