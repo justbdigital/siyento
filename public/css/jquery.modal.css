@@ -16,6 +16,7 @@
   right: auto;
   bottom: auto;
   overflow: visible;
+  z-index: 99999999 !important;
 }
 
 .modal a.close-modal {
@@ -44,4 +45,8 @@
   -o-border-radius: 8px;
   -ms-border-radius: 8px;
   border-radius: 8px;
+}
+
+.jquery-modal{
+  z-index:9999999 !important;
 }
