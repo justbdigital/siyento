@@ -27,4 +27,24 @@ $(document).ready(function(){
     });
     $.modal.close();
     });
+
+  $(".email-form").submit(function(event){
+    var email = $("form.email-form input[type=text]").val();
+
+    $.ajax({
+      type: "POST",
+      url: "/add_email",
+      data: { email: email },
+      success: function(data){
+        $(".subscription-info h3").html(data);
+        $(".subscription-info").modal();
+      }
+    });
+
+    event.preventDefault();
+    });
+
+  $("#close-subscription-info").click(function(){
+    $.modal.close();
+  });
 });

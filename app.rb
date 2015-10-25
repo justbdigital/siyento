@@ -2,10 +2,14 @@ require 'rubygems'
 require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
+require "sinatra/config_file"
+require "pry"
 
 set :database_file, File.expand_path("../config/database.yml", __FILE__)
 set :root, File.dirname(__FILE__)
 set :partial_template_engine, :erb
+
+config_file File.expand_path "../config/secrets.yml", __FILE__
 
 get '/' do
   @offers = Offer.last_days.where("deal_price <= ?", 100)
@@ -15,6 +19,16 @@ end
 post '/filter' do
   @offers = Offer.last_days.where("deal_price <= ?", params[:deal_price])
   partial :offers
+end
+
+post '/add_email' do
+  if params[:email] =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+    result = Mailchimp.new(settings.mailchimp_key, settings.mailchimp_list_name).add_subscriber params[:email]
+    return "You have beed subscribed!" if result
+    "Sorry something goes wrong plz try later"
+  else
+    "Its not looks like email :("
+  end
 end
 
 get '/promote' do
