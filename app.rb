@@ -3,7 +3,6 @@ require 'sinatra'
 require 'nokogiri'
 require 'open-uri'
 require "sinatra/config_file"
-require "pry"
 
 set :database_file, File.expand_path("../config/database.yml", __FILE__)
 set :root, File.dirname(__FILE__)
