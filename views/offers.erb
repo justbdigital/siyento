@@ -1,6 +1,7 @@
 <% @offers.each_slice(4) do |offers| %>
 <div class="row">
   <% offers.each do |offer| %>
+  <% @index += 1 %>
   <div class="col-md-3">
     <a href="#modal-<%=offer.id %>" rel="modal:open" >
       <div class="portfolio-item rollover">
@@ -13,7 +14,7 @@
             <div>₱<%= offer.deal_price.to_i %></div>
           </div>
         </div>
-      </div><!-- end col-12 -->
+      </div>
     </a>
     <div id="modal-<%=offer.id %>" class="modal">
       <div>
@@ -31,5 +32,15 @@
   </div>
   <% end %>
 </div>
+<% if (@index % 10) == 0 %>
+<% @index = 0 %>
+<div class="row">
+  &nbsp;
+  <div align="center">
+  <script src="//go.padstm.com/?id=431730"></script>
+  </div>
+
+</div>
+<% end %>
 <% end %>
 
