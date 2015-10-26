@@ -12,6 +12,7 @@ config_file File.expand_path "../config/secrets.yml", __FILE__
 
 get '/' do
   @offers = Offer.last_days.where("deal_price <= ?", 100)
+  @index = 0
   erb :index
 end
 
