@@ -18,6 +18,7 @@ end
 
 post '/filter' do
   @offers = Offer.last_days.where("deal_price <= ?", params[:deal_price])
+  @index = 0
   partial :offers
 end
 
