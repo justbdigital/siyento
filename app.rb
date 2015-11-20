@@ -25,10 +25,10 @@ end
 post '/add_email' do
   if params[:email] =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
     result = Mailchimp.new(settings.mailchimp_key, settings.mailchimp_list_name).add_subscriber params[:email]
-    return "You add to newsletter" if result
-    "Sorry something goes wrong plz try later"
+    return "You've been added" if result
+    "Sorry something is wrong plz try later"
   else
-    "Its not looks like email :("
+    "Doesn't looks like an email :("
   end
 end
 
