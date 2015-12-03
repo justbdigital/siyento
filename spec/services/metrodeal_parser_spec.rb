@@ -3,6 +3,6 @@ describe MetrodealParser, vcr: true do
   let(:result) { parser.fetch }
 
   context '#fetch' do
-    it { expect(result).to eq '' }
+    it { expect(result).to be_kind_of Array }
   end
 end

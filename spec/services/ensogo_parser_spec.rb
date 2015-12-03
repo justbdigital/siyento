@@ -3,7 +3,7 @@ describe EnsogoParser, vcr: true do
     let(:parser) { EnsogoParser.new }
     let(:result) { parser.fetch }
     it do
-      expect(result).to be_falsy
+      expect(result).to be_kind_of Array
     end
   end
 end
